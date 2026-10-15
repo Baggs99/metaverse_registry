@@ -26,7 +26,8 @@ A public list of worlds on the Metaverse Web (`mvw/0.1`, see [`https://github.co
    | `owner` | Your GitHub username, so people know who to ask. |
 
 3. **Check it:** run `node check.js` (Node 18 or newer, no install needed). Every world should show `✓`.
-4. **Open a pull request.** Once it's merged, your world gets a portal in Metaverse Square the next time the square is deployed.
+4. **Open a pull request.** If it only adds your one world, `owner` is your GitHub username, and the address is on your own GitHub Pages site (`https://<your-username>.github.io/...`), it **merges automatically** as soon as the manifest check passes. Anything else (another host, edits to other entries, several worlds at once) gets a quick human review.
+5. **Walk in.** Metaverse Square reads this list live every time it opens, so your portal appears there within a few minutes of the merge. If your manifest has a `from_square` spawn, the square's portal lands people there, so put it in front of your portal back to the square.
 
 ## Checking every world
 
@@ -34,7 +35,7 @@ A public list of worlds on the Metaverse Web (`mvw/0.1`, see [`https://github.co
 node check.js
 ```
 
-For each world it fetches the manifest and reports whether it loads, whether it's valid `mvw/0.1` (a `name`, `spawns.default`, and portals with `http(s)` addresses), and whether other sites are allowed to read it. It exits with code 1 if any world fails, so it can run automatically on every pull request.
+`check.js` runs automatically on every pull request; `auto-merge.js` decides which pull requests can merge without a review (it reads the proposed list as data and never runs the pull request's code). For each world, `check.js` fetches the manifest and reports whether it loads, whether it's valid `mvw/0.1` (a `name`, `spawns.default`, and portals with `http(s)` addresses), and whether other sites are allowed to read it. It exits with code 1 if any world fails, so it can run automatically on every pull request.
 
 ## Trying it locally
 
