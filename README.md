@@ -11,10 +11,10 @@ A public list of worlds on the Metaverse Web (`mvw/0.1`, see [`https://github.co
 
    ```json
    {
-     "id": "lans_world",
-     "name": "Lan's World",
-     "address": "https://lanluo.github.io/lans_world/",
-     "owner": "lanluo"
+     "id": "darul_kebab",
+     "name": "Darul Kebab",
+     "address": "https://zlisto.github.io/darul_kebab/",
+     "owner": "zlisto"
    }
    ```
 
